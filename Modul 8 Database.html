@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modul 8-Hilda Aura Safitri Rachel</title>
+    <h1 style="text-align: center; color: #fff; background: #99BC85;">Perpustakaan My Lab</h1>
+    <h2 style="text-align: center; color: #99BC85">Selamat Datang di Perpustakaan My Lab</h2>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #99BC85;
+        }
+        .control {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        let database = [
+            { id: 1, name: "Hilda Aura Safitri Rachel", age: 22, NIM: "210709034" },
+            { id: 2, name: "Dinda Muthia br. Sembiring", age: 21, NIM: "210709056" },
+            { id: 3, name: "Maria Grace Angel", age: 21, NIM: "210709053" },
+            { id: 4, name: "Elysa Masdalifah Pakpahan", age: 21, NIM: "210709028" },
+            { id: 5, name: "Stephani Fransisca Barus", age: 21, NIM: "210709041" },
+    ]
+
+        function displayDatabase() {
+            let table = document.getElementById("databaseTable");
+            table.innerHTML = "";
+            database.forEach((row, index) => {
+                let tr = table.insertRow();
+                tr.insertCell(0).innerHTML = row.id;
+                tr.insertCell(1).innerHTML = row.name;
+                tr.insertCell(2).innerHTML = row.age;
+                tr.insertCell(3).innerHTML = row.NIM;
+                let actions = tr.insertCell(4);
+                actions.innerHTML = `<button onclick="editRow(${index})">Edit</button>
+                                     <button onclick="deleteRow(${index})">Delete</button>`;
+            });
+        }
+
+        function addRow() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+            let id = database.length ? database[database.length - 1].id + 1 : 1;
+            database.push({ id, name, age, email });
+            displayDatabase();
+        }
+
+        function editRow(index) {
+            let row = database[index];
+            document.getElementById("name").value = row.name;
+            document.getElementById("age").value = row.age;
+            document.getElementById("email").value = row.email;
+            document.getElementById("index").value = index;
+            document.getElementById("submit").value = "Update";
+        }
+
+        function updateRow(index) {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+            database[index] = { ...database[index], name, age, email };
+            displayDatabase();
+            document.getElementById("submit").value = "Add";
+        }
+
+        function deleteRow(index) {
+            database.splice(index, 1);
+            displayDatabase();
+        }
+
+        function handleSubmit() {
+            let index = document.getElementById("index").value;
+            if (index) {
+                updateRow(index);
+            } else {
+                addRow();
+            }
+            document.getElementById("index").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("email").value = "";
+        }
+
+        window.onload = function() {
+            displayDatabase();
+        };
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center; color: #1b310f;">Manajemen Database</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Usia</th>
+                <th>NIM</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="databaseTable">
+            <!-- Data akan diisi oleh JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="control">
+        <h3 style="color: #1b310f;">Tambah/Ubah Data</h3>
+        <form onsubmit="event.preventDefault(); handleSubmit();">
+            <input type="hidden" id="index">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="age">Usia:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            <label for="NIM">NIM:</label>
+            <input type="NIM" id="NIM" name="NIM" required><br><br>
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; Built by Hilda Aura Safitri Rachel (210709034)</p>
+        <p>Tugas Pengembangan Web Perpustakaan</p>
+    </footer>
+</body>
+</html>

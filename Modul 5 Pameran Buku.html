@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modul 5-Hilda Aura Safitri Rachel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<style>table{width:100%;border-collapse:collapse}th,td{padding:8px;text-align:left;border-bottom:1px solid #99BC85}tr:hover{background-color:#99BC85}.highlight{background-color:#fff}body{background-color:#f0f9eb}</style>
+</head>
+<body>
+<h1 style="text-align: center; color: #fff; background: #99BC85;">Perpustakaan My Lab</h1>
+<h2 style="text-align: center; color: #182c0c">Selamat Datang di Perpustakaan My Lab</h2>
+<h2 style="text-align: center; color: #99BC85">PAMERAN BUKU</h2>
+</head>
+<body>
+
+<div id="deskripsiPameran">
+    <p style="text-align: center; color: #99BC85;">Yuk! Lihat Pameran Koleksi Buku Perpustakaan My Lab</p>
+</div>
+
+<button id="tombolPameran">Lihat Detail Pameran</button>
+
+<h3 style="color: #99BC85;">Daftar Buku Novel Fiksi dalam Pameran</h3>
+<ul id="daftarBuku"></ul>
+
+<script>
+    // elemen berdasarkan ID - Javascript
+    var judulPameran = document.getElementById("judulPameran");
+    var deskripsiPameran = document.getElementById("deskripsiPameran");
+    var tombolPameran = document.getElementById("tombolPameran");
+    var daftarBuku = document.getElementById("daftarBuku");
+
+    // HTML DOM event untuk tombol "lihat detail pameran"
+    tombolPameran.addEventListener("click", function() {
+        deskripsiPameran.innerHTML = "<p>Detail Pameran: Pameran buku akan diselenggarakan pada tanggal 10 Juni 2024</p>";
+
+        // daftar buku novel
+        var bukuNovel = [
+            { judul: "Hello to My Ex", pengarang: "Pit Sansi" },
+            { judul: "Face Syndrome", pengarang: "Pit Sansi" },
+            { judul: "Just Be Mine", pengarang: "Pit Sansi" },
+            { judul: "Saga", pengarang: "Pit Sansi" },
+            { judul: "Demi Konten", pengarang: "Pit Sansi" },
+            { judul: "My Ice Boy", pengarang: "Pit Sansi" },
+            { judul: "My Ice Girl", pengarang: "Pit Sansi" },
+            { judul: "Surat Cinta Tanpa Nama", pengarang: "Pit Sansi" },
+            { judul: "Claires", pengarang: "Valerie Patkar" },
+            { judul: "Game Over", pengarang: "Valerie Patkar" },
+            { judul: "Serangkai", pengarang: "Valerie Patkar" },
+            { judul: "Nonversation", pengarang: "Valerie Patkar" },
+            { judul: "Ancika: Dia yang Bersamaku Tahun 1995", pengarang: "Pidi Baiq" },
+            { judul: "Dilan Bagian Kedua: Dia adalah Dilanku 1991", pengarang: "Pidi Baiq" },
+            { judul: "Dilan: Dia adalah Dilanku tahun 1990", pengarang: "Pidi Baiq" },
+            { judul: "Hidup Ini Terlalu Banyak Kamu", pengarang: "Pidi Baiq" },
+            { judul: "Milea: Suara dari Dilan", pengarang: "Pidi Baiq" },
+            { judul: "RE:Dan Perempuan", pengarang: "Maman Suherman" },
+            { judul: "Re:", pengarang: "Maman Suherman" },
+            { judul: "7th Anniversary", pengarang: "Citra Novy" },
+            { judul: "Aksara Sevanya", pengarang: "Citra Novy" },
+            { judul: "Aksioma", pengarang: "Citra Novy" },
+            { judul: "Flat Shoes Oppa", pengarang: "Citra Novy" },
+            { judul: "Garis Tangan", pengarang: "Citra Novy" },
+            { judul: "Hello Mello", pengarang: "Citra Novy" },
+            { judul: "Hi, Bye!", pengarang: "Citra Novy" },
+            { judul: "Ketos Galak", pengarang: "Citra Novy" },
+            { judul: "Light in a Maze", pengarang: "Citra Novy" },
+            { judul: "Love in Triangle: Satu Kelas", pengarang: "Citra Novy" },
+            { judul: "Lovession Series: Miss Compicated Designer", pengarang: "Citra Novy" },
+            { judul: "Near", pengarang: "Citra Novy" },
+            { judul: "Sabria", pengarang: "Citra Novy" },
+            { judul: "Satu Atap", pengarang: "Citra Novy" },
+            { judul: "Say it First!", pengarang: "Citra Novy" },
+            { judul: "Slowly Falling", pengarang: "Citra Novy" },
+            { judul: "Urban Romance: Once", pengarang: "Citra Novy" },
+        ];
+
+       
+        bukuNovel.forEach(function(buku) {
+            var itemBuku = document.createElement("li");
+            itemBuku.textContent = buku.judul + " - " + buku.pengarang;
+            daftarBuku.appendChild(itemBuku);
+        });
+    });
+
+    </script>
+    <footer>
+        <p>&copy; Built by Hilda Aura Safitri Rachel (210709034)</p>
+        <p>Tugas Pengembangan Web Perpustakaan</p>
+    </footer>
+  </body>
+  </html>

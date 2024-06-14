@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 5-Hilda Aura Safitri Rachel</title>
+<style>
+    /* Styles untuk pameran buku */
+    .book-exhibition {
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #fff; background: #99BC85;">Perpustakaan My Lab</h1>
+    <h2 style="text-align: center; color: #99BC85">Selamat Datang di Perpustakaan My Lab</h2>
+    <h2 style="text-align: center; color: #1b310f">PAMERAN BUKU</h2>
+
+<p style="color: #1b310f">Masukkan jumlah buku yang ingin dipamerkan:</p>
+<input type="number" id="jumlahBuku">
+<button onclick="tampilkanPameran()">Tampilkan Pameran</button>
+
+<div id="pameranBuku" class="book-exhibition"></div>
+
+<script>
+// JavaScript code
+function tampilkanPameran() {
+    var jumlahBuku = parseInt(document.getElementById("jumlahBuku").value);
+    var pameran = document.getElementById("pameranBuku");
+
+    // Bersihkan pameran sebelum menambahkan buku baru
+    pameran.innerHTML = "";
+
+    if (jumlahBuku <= 0 || isNaN(jumlahBuku)) {
+        pameran.innerHTML = "Masukkan jumlah buku yang valid!";
+    } else {
+        pameran.innerHTML = "<h2>Pameran Buku:</h2>";
+
+        // Buat daftar buku dengan perulangan
+        pameran.innerHTML += "<ul>";
+        for (var i = 1; i <= jumlahBuku; i++) {
+            pameran.innerHTML += "<li>Buku " + i + "</li>";
+        }
+        pameran.innerHTML += "</ul>";
+    }
+}
+</script>
+<footer>
+    <p>&copy; Built by Hilda Aura Safitri Rachel (210709034)</p>
+    <p>Tugas Pengembangan Web Perpustakaan</p>
+</footer>
+</body>
+</html>

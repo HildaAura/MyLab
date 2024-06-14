@@ -1,0 +1,130 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: x-large;
+}
+
+body {
+    background-color: #f0f9eb;
+}
+
+ul {
+    color:#3f5730
+}
+
+p {
+    color: #99BC85;
+}
+
+.fContainer {
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    background-color:#99BC85;
+}
+
+.wrapper {
+    width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+.logo a {
+    font-size: 60px;
+    font-weight: bold;
+    float: left;
+    font-family: courier;
+    color: #3f5730;
+    text-decoration: none;
+}
+
+.brand {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    Padding: 15px;
+    text-transform: capitalize;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation>li {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.navigation>li>a {
+    color:#3f5730;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navigation>li>a:hover {
+    color:#fff;
+    transition: all .6s case-in-out;
+}
+
+section {
+    margin: auto;
+    display:contents;
+    margin-bottom: 20px;
+}
+
+.kolom {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.kolom .deskripsi {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #3f5730;
+}
+
+h2 {
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: 45px;
+    margin-bottom: 5px;
+    color: #6b9c4e;
+    width: 100%;
+    line-height: 50px;
+}
+
+a.tbl-biru {
+    background: #fff;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 15px 20px 15px 20px;
+    color: #3f5730;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-biru:hover {
+    background:#3f5730;
+    text-decoration: none;
+}
+
+a.tbl-orange {
+    background: #99BC85;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #3f5730;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-orange:hover {
+    background: #fff;
+    text-decoration: none;
+}
+
+Ul.A {list-style-type:circle; margin-left:50px;}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 7-Hilda Aura Safitri Rachel</title>
+    <h1 style="text-align: center; color: #fff; background: #99BC85;">Perpustakaan My Lab</h1>
+    <h2 style="text-align: center; color: #99BC85">Selamat Datang di Perpustakaan My Lab</h2>
+    <h2 style="text-align: center; color: #1b310f">BELAJAR PHP</h2>
+</head>
+<body>
+    <ul id="listHari">
+    </ul>
+
+    <script>
+        var listHari = document.getElementById('listHari');
+        for (var i = 1; i <= 1000; i++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = "Ini adalah hari ke-" + i + " belajar php";
+            listHari.appendChild(listItem);
+        }
+    </script>
+        <footer>
+            <p>&copy; Built by Hilda Aura Safitri Rachel (210709034)</p>
+            <p>Tugas Pengembangan Web Perpustakaan</p>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modul 7-Hilda Aura Safitri Rachel</title>
+    <h1 style="text-align: center; color: #fff; background: #99BC85;">Perpustakaan My Lab</h1>
+    <h2 style="text-align: center; color: #99BC85">Selamat Datang di Perpustakaan My Lab</h2>
+    <h2 style="text-align: center; color: #1b310f">KALKULATOR SEDERHANA</h2>
+    <script>
+        function hitung() {
+            var bil1 = parseFloat(document.getElementById("bil1").value);
+            var bil2 = parseFloat(document.getElementById("bil2").value);
+            var operasi = document.getElementById("operasi").value;
+            var hasil;
+
+            if (isNaN(bil1) || isNaN(bil2)) {
+                hasil = "Mohon masukkan bilangan yang valid";
+            } else {
+                switch (operasi) {
+                    case "tambah":
+                        hasil = bil1 + bil2;
+                        break;
+                    case "kurang":
+                        hasil = bil1 - bil2;
+                        break;
+                    case "kali":
+                        hasil = bil1 * bil2;
+                        break;
+                    case "bagi":
+                        if (bil2 === 0) {
+                            hasil = "Pembagian dengan nol tidak diperbolehkan";
+                        } else {
+                            hasil = bil1 / bil2;
+                        }
+                        break;
+                    default:
+                        hasil = "Operasi tidak valid";
+                }
+            }
+
+            document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); hitung();">
+        <label for="bil1">Bilangan 1:</label>
+        <input type="text" id="bil1" name="bil1"><br><br>
+
+        <label for="bil2">Bilangan 2:</label>
+        <input type="text" id="bil2" name="bil2"><br><br>
+
+        <label for="operasi">Operasi:</label>
+        <select id="operasi" name="operasi">
+            <option value="tambah">Tambah</option>
+            <option value="kurang">Kurang</option>
+            <option value="kali">Kali</option>
+            <option value="bagi">Bagi</option>
+        </select><br><br>
+
+        <input type="submit" value="Hitung">
+    </form>
+    <p id="hasil">Hasil: </p>
+
+    <footer>
+        <p>&copy; Built by Hilda Aura Safitri Rachel (210709034)</p>
+        <p>Tugas Pengembangan Web Perpustakaan</p>
+    </footer>
+</body>
+</html>
